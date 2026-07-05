@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.crystalbank.controller.DepositController"
+      styleClass="root-container" alignment="CENTER"
+      spacing="0" prefWidth="420" prefHeight="400">
+
+    <VBox styleClass="header-box" alignment="CENTER" spacing="4">
+        <Text text="💎 CrystalBank" styleClass="bank-title"/>
+    </VBox>
+
+    <VBox styleClass="card" alignment="CENTER" spacing="16" maxWidth="360">
+
+        <Text text="💰 Deposit" styleClass="card-title"/>
+        <Label fx:id="balanceLabel" styleClass="balance-hint"/>
+
+        <VBox spacing="6">
+            <Label text="Amount (RM)" styleClass="field-label"/>
+            <TextField fx:id="amountField" promptText="e.g. 500.00" styleClass="text-field"/>
+        </VBox>
+
+        <VBox spacing="6">
+            <Label text="Description (optional)" styleClass="field-label"/>
+            <TextField fx:id="descriptionField" promptText="e.g. Salary" styleClass="text-field"/>
+        </VBox>
+
+        <Label fx:id="messageLabel" text="" wrapText="true"
+               maxWidth="340" styleClass="message-label"/>
+
+        <Button text="Confirm Deposit" onAction="#handleDeposit"
+                styleClass="btn-primary" maxWidth="Infinity"/>
+
+        <Button text="← Back to Dashboard" onAction="#handleBack"
+                styleClass="btn-secondary" maxWidth="Infinity"/>
+    </VBox>
+</VBox>

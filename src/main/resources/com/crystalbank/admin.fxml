@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.crystalbank.controller.AdminController"
+      styleClass="root-container"
+      spacing="0" prefWidth="900" prefHeight="620">
+
+    <!-- Top bar -->
+    <HBox styleClass="topbar" alignment="CENTER_LEFT" spacing="12">
+        <Text text="💎 CrystalBank" styleClass="topbar-title"/>
+        <Label text="ADMIN PANEL" styleClass="admin-badge"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label fx:id="adminNameLabel" styleClass="topbar-welcome"/>
+        <Button text="Logout" onAction="#handleLogout" styleClass="btn-logout"/>
+    </HBox>
+
+    <VBox styleClass="main-content" spacing="12" VBox.vgrow="ALWAYS">
+
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Label fx:id="statusMessageLabel" styleClass="hint-label"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="🔄 Refresh" onAction="#handleRefresh" styleClass="btn-secondary"/>
+        </HBox>
+
+        <TabPane VBox.vgrow="ALWAYS">
+
+            <!-- Clients Tab -->
+            <Tab text="👥 Clients" closable="false">
+                <VBox spacing="10" style="-fx-padding: 10;">
+                    <TableView fx:id="usersTable" VBox.vgrow="ALWAYS" prefHeight="400">
+                        <columns>
+                            <TableColumn fx:id="userIdCol"       text="ID"         prefWidth="50"/>
+                            <TableColumn fx:id="userNameCol"     text="Full Name"   prefWidth="160"/>
+                            <TableColumn fx:id="userUsernameCol" text="Username"    prefWidth="120"/>
+                            <TableColumn fx:id="userEmailCol"    text="Email"       prefWidth="200"/>
+                            <TableColumn fx:id="userPhoneCol"    text="Phone"       prefWidth="120"/>
+                            <TableColumn fx:id="userCreatedCol"  text="Registered"  prefWidth="160"/>
+                        </columns>
+                        <placeholder><Label text="No clients found."/></placeholder>
+                    </TableView>
+                </VBox>
+            </Tab>
+
+            <!-- Accounts Tab -->
+            <Tab text="🏦 Accounts" closable="false">
+                <VBox spacing="10" style="-fx-padding: 10;">
+                    <TableView fx:id="accountsTable" VBox.vgrow="ALWAYS" prefHeight="340">
+                        <columns>
+                            <TableColumn fx:id="accIdCol"      text="ID"             prefWidth="50"/>
+                            <TableColumn fx:id="accNumberCol"  text="Account Number"  prefWidth="160"/>
+                            <TableColumn fx:id="accTypeCol"    text="Type"            prefWidth="100"/>
+                            <TableColumn fx:id="accBalanceCol" text="Balance"         prefWidth="120"/>
+                            <TableColumn fx:id="accStatusCol"  text="Status"          prefWidth="100"/>
+                            <TableColumn fx:id="accCreatedCol" text="Created"         prefWidth="160"/>
+                        </columns>
+                        <placeholder><Label text="No accounts found."/></placeholder>
+                    </TableView>
+                    <HBox spacing="10">
+                        <Button text="✅ Activate"  onAction="#handleActivateAccount" styleClass="btn-success"/>
+                        <Button text="❄️ Freeze"    onAction="#handleFreezeAccount"   styleClass="btn-secondary"/>
+                        <Button text="🚫 Close"     onAction="#handleCloseAccount"    styleClass="btn-danger"/>
+                    </HBox>
+                </VBox>
+            </Tab>
+
+            <!-- Transactions Tab -->
+            <Tab text="📋 Transactions" closable="false">
+                <VBox spacing="10" style="-fx-padding: 10;">
+                    <TableView fx:id="txTable" VBox.vgrow="ALWAYS" prefHeight="400">
+                        <columns>
+                            <TableColumn fx:id="txIdCol"      text="ID"          prefWidth="50"/>
+                            <TableColumn fx:id="txAccIdCol"   text="Account ID"  prefWidth="90"/>
+                            <TableColumn fx:id="txTypeCol"    text="Type"        prefWidth="110"/>
+                            <TableColumn fx:id="txAmountCol"  text="Amount"      prefWidth="110"/>
+                            <TableColumn fx:id="txBalanceCol" text="Bal. After"  prefWidth="110"/>
+                            <TableColumn fx:id="txDescCol"    text="Description" prefWidth="170"/>
+                            <TableColumn fx:id="txDateCol"    text="Date"        prefWidth="155"/>
+                        </columns>
+                        <placeholder><Label text="No transactions found."/></placeholder>
+                    </TableView>
+                </VBox>
+            </Tab>
+
+        </TabPane>
+    </VBox>
+</VBox>

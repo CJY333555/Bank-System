@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.crystalbank.controller.TransactionHistoryController"
+      styleClass="root-container"
+      spacing="0" prefWidth="780" prefHeight="520">
+
+    <VBox styleClass="header-box" alignment="CENTER" spacing="4">
+        <Text text="💎 CrystalBank" styleClass="bank-title"/>
+    </VBox>
+
+    <VBox styleClass="main-content" spacing="14" VBox.vgrow="ALWAYS">
+        <HBox alignment="CENTER_LEFT" spacing="12">
+            <Text text="📋 Transaction History" styleClass="page-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="accountLabel" styleClass="hint-label"/>
+        </HBox>
+
+        <TableView fx:id="transactionTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="dateCol"    text="Date &amp; Time" prefWidth="160"/>
+                <TableColumn fx:id="typeCol"    text="Type"            prefWidth="120"/>
+                <TableColumn fx:id="amountCol"  text="Amount"          prefWidth="120"/>
+                <TableColumn fx:id="balanceCol" text="Balance After"   prefWidth="130"/>
+                <TableColumn fx:id="descCol"    text="Description"     prefWidth="200"/>
+            </columns>
+            <placeholder>
+                <Label text="No transactions found."/>
+            </placeholder>
+        </TableView>
+
+        <Button text="← Back to Dashboard" onAction="#handleBack"
+                styleClass="btn-secondary"/>
+    </VBox>
+</VBox>

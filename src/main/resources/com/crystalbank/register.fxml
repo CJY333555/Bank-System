@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.crystalbank.controller.RegisterController"
+      styleClass="root-container"
+      alignment="CENTER" spacing="0"
+      prefWidth="480" prefHeight="600">
+
+    <VBox styleClass="header-box" alignment="CENTER" spacing="4">
+        <Text text="💎 CrystalBank" styleClass="bank-title"/>
+        <Text text="Create New Account" styleClass="bank-subtitle"/>
+    </VBox>
+
+    <VBox styleClass="card" alignment="CENTER" spacing="12" maxWidth="400">
+
+        <Text text="Register" styleClass="card-title"/>
+
+        <VBox spacing="4">
+            <Label text="Full Name" styleClass="field-label"/>
+            <TextField fx:id="fullNameField" promptText="Your full name" styleClass="text-field"/>
+        </VBox>
+
+        <HBox spacing="10">
+            <VBox spacing="4" HBox.hgrow="ALWAYS">
+                <Label text="Username" styleClass="field-label"/>
+                <TextField fx:id="usernameField" promptText="Username" styleClass="text-field"/>
+            </VBox>
+            <VBox spacing="4" HBox.hgrow="ALWAYS">
+                <Label text="Phone" styleClass="field-label"/>
+                <TextField fx:id="phoneField" promptText="Phone number" styleClass="text-field"/>
+            </VBox>
+        </HBox>
+
+        <VBox spacing="4">
+            <Label text="Email" styleClass="field-label"/>
+            <TextField fx:id="emailField" promptText="Email address" styleClass="text-field"/>
+        </VBox>
+
+        <HBox spacing="10">
+            <VBox spacing="4" HBox.hgrow="ALWAYS">
+                <Label text="Password" styleClass="field-label"/>
+                <PasswordField fx:id="passwordField" promptText="Password" styleClass="text-field"/>
+            </VBox>
+            <VBox spacing="4" HBox.hgrow="ALWAYS">
+                <Label text="Confirm Password" styleClass="field-label"/>
+                <PasswordField fx:id="confirmPasswordField" promptText="Confirm" styleClass="text-field"/>
+            </VBox>
+        </HBox>
+
+        <VBox spacing="4">
+            <Label text="Account Type" styleClass="field-label"/>
+            <ComboBox fx:id="accountTypeCombo" maxWidth="Infinity" styleClass="combo-box"/>
+        </VBox>
+
+        <Label fx:id="messageLabel" text="" wrapText="true"
+               maxWidth="380" styleClass="message-label"/>
+
+        <Button text="Create Account" onAction="#handleRegister"
+                styleClass="btn-primary" maxWidth="Infinity"/>
+
+        <HBox alignment="CENTER" spacing="6">
+            <Label text="Already have an account?" styleClass="hint-label"/>
+            <Hyperlink text="Login here" onAction="#handleBackToLogin" styleClass="link"/>
+        </HBox>
+
+    </VBox>
+</VBox>
