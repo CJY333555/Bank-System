@@ -37,11 +37,6 @@ The application follows the **MVC (Model-View-Controller)** architecture pattern
 
 ## 📱 Screenshots
 
-> 💡 **How to add your screenshots:**
-> 1. Create a `screenshots/` folder in your repo root
-> 2. Run the app and take screenshots of each screen
-> 3. Save them with the filenames below — they will appear automatically
-
 | Login | Register |
 |:-----:|:--------:|
 | ![Login](screenshots/login.png) | ![Register](screenshots/register.png) |
@@ -54,9 +49,9 @@ The application follows the **MVC (Model-View-Controller)** architecture pattern
 |:-------:|:--------:|
 | ![Deposit](screenshots/deposit.png) | ![Transfer](screenshots/transfer.png) |
 
-| Admin Panel — Accounts | Admin Panel — Transactions |
+| Withdraw | Admin Panel — Accounts |
 |:----------------------:|:--------------------------:|
-| ![Admin Accounts](screenshots/admin_accounts.png) | ![Admin Transactions](screenshots/admin_transactions.png) |
+| ![Withdraw](screenshots/withdraw.png) | ![Admin Accounts](screenshots/admin_accounts.png) |
 
 ---
 
