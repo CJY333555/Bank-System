@@ -234,6 +234,6 @@ CrystalBank/crystalbank.db
 
 <div align="center">
 
-Made with ❤️ using JavaFX
+Made with using JavaFX
 
 </div>
